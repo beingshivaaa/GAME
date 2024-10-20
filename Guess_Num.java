@@ -5,13 +5,14 @@ public class Guess_Num {
         Scanner sc=new Scanner(System.in);
         System.out.println("WELCOME TO Guess My Number !");
         System.out.println("YOU HAVE TO GUESS THE NUMBER WITH A MAXIMUM OF 5 TRIALS.");
-        System.out.println("P.S: YOU WILL GET A HINT IN THE FIRST ROUND AND A BONUS HINT IN LAST ROUND >_< ");
+        System.out.println("P.S: YOU WILL GET A HINT IN THE FIRST ROUND");
         System.out.println("Enter 1 to START or 0 to EXIT -->");
         int n1=sc.nextInt();
         game(n1);
     }
     static void game(int num)
-    { int a=64;
+    { 
+        int a=(int)(Math.random()*100);
         switch(num)
         {
             case 0:
@@ -27,7 +28,10 @@ public class Guess_Num {
               break;}
               else
               {
-              System.out.println("SORRY,WRONG GUESS."+(5-i)+" trials are left.");}
+              System.out.println("SORRY,WRONG GUESS."+(5-i)+" trials are left.");
+                if(i==5)
+                System.out.println("The correct number is "+a+" :)");
+              }
 
             }
             break;
@@ -40,17 +44,7 @@ public class Guess_Num {
         Scanner sc=new Scanner(System.in);
                 if(x==1)
                 { 
-                    System.out.println("First Hint: THE NUMBER LIES BETWEEN 1 AND 100.");
-                    System.out.println("Make the Guess: ");
-                    int m=sc.nextInt();
-                    if(m==y)
-                return 1;
-                else
-                return 0;
-                }
-                else if(x==5)
-                { 
-                    System.out.println("BONUS Hint: THE NUMBER LIES BETWEEN 60 AND 70.");
+                    System.out.println("Hint: THE NUMBER LIES BETWEEN 1 AND 100.");
                     System.out.println("Make the Guess: ");
                     int m=sc.nextInt();
                     if(m==y)
@@ -63,9 +57,9 @@ public class Guess_Num {
                     System.out.println("Make the Guess: ");
                     int m=sc.nextInt();
                     if(m==y)
-                return 1;
-                else
-                return 0;
+                    return 1;
+                    else
+                    return 0;
                 }
                 
     }
